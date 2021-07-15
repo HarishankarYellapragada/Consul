@@ -1,0 +1,56 @@
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: data-consul-pv0
+  labels:
+    type: local
+spec:
+  storageClassName: default
+  capacity:
+    storage: 10Gi
+  accessModes:
+    - ReadWriteOnce
+  claimRef:
+    kind: PersistentVolumeClaim
+    namespace: default
+    name: data-default-consul-server-0
+  hostPath:
+    path: "/mnt/data/pv0"
+---
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: data-consul-pv1
+  labels:
+    type: local
+spec:
+  storageClassName: default
+  capacity:
+    storage: 10Gi
+  accessModes:
+    - ReadWriteOnce
+  claimRef:
+    kind: PersistentVolumeClaim
+    namespace: default
+    name: data-default-consul-server-1
+  hostPath:
+    path: "/mnt/data/pv1"
+---
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: data-consul-pv2
+  labels:
+    type: local
+spec:
+  storageClassName: default
+  capacity:
+    storage: 10Gi
+  accessModes:
+    - ReadWriteOnce
+  claimRef:
+    kind: PersistentVolumeClaim
+    namespace: default
+    name: data-default-consul-server-2
+  hostPath:
+    path: "/mnt/data/pv2"
