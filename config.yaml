@@ -1,0 +1,37 @@
+global:
+  name: consul
+  datacenter: AcuityDC1
+  # kubectl create secret generic consul-gossip-encryption-key --from-literal=key=$(consul keygen)
+  # Run above command for gossip key
+  gossipEncryption:
+    secretName: 'consul-gossip-encryption-key'
+    secretKey: 'key'
+  tls:
+    enabled: true
+    enableAutoEncrypt: true
+    verify: true
+  acls:
+    manageSystemACLs: true
+server:
+  replicas: 3
+  bootstrapExpect: 3
+  disruptionBudget:
+    enabled: true
+    maxUnavailable: 0
+  updatePartition:
+  securityContext:
+    runAsNonRoot: false
+    runAsUser: 0
+ui:
+# Add service Loadbalancer for consul ui to be on a random port. Check in kubernetes services
+# service:
+#    type: "LoadBalancer"
+  enabled: true
+connectInject:
+  enabled: true
+controller:
+  enabled: true
+prometheus:
+  enabled: true
+grafana:
+  enabled: true
