@@ -1,2 +1,2 @@
-# Consul Setup Procedure
-Networking
+# Consul Setup
+--------------------
