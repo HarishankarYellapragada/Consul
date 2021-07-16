@@ -54,5 +54,9 @@ To start consul
 ```
 helm install consul hashicorp/consul -f config.yaml
 ```
+To uninstall consul 
+```
+helm uninstall consul
+```
 
 
