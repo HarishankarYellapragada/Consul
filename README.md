@@ -10,6 +10,19 @@ chmod 700 get_helm.sh
 ```
 
 ## Step 2:
+Install consul agent on all nodes (for CentOS) 
+```
+sudo yum install -y yum-utils
+sudo yum-config-manager --add-repo https://rpm.releases.hashicorp.com/RHEL/hashicorp.repo
+sudo yum -y install consul
+```
+```
+consul
+consul members
+```
+
+
+## Step 3:
 Create persistent volumes using pv.yaml (Used 3 pv's for test 3 worker cluster)
 
 Create a path for pv on all workers 
@@ -19,7 +32,7 @@ Create a path for pv on all workers
 /mnt/data/pv1
 /mnt/data/pv2
 ```
-## Step 3:
+# Step 4:
 Create a gossip encryption key
 
 ```
