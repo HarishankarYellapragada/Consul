@@ -32,13 +32,17 @@ Create a path for pv on all workers
 /mnt/data/pv1
 /mnt/data/pv2
 ```
+```
+kubectl apply -f pv.yaml
+```
+
 # Step 4:
 Create a gossip encryption key
 
 ```
 kubectl create secret generic consul-gossip-encryption-key --from-literal=key=$(consul keygen)
 ```
-To reference use in config:
+To reference, use:
 ```
 global:
   gossipEncryption:
@@ -46,3 +50,9 @@ global:
     secretKey: key
 ```
 # Step 5:
+To start consul 
+```
+helm install consul hashicorp/consul -f config.yaml
+```
+
+
