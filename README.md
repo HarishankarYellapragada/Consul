@@ -59,7 +59,8 @@ To uninstall consul
 helm uninstall consul
 ```
 # Step 6:
-To expose ui of consul. tls disabled
+To expose ui of consul. 
+with tls disabled
 ```
 kubectl port-forward service/consul-server 8500:8500
 ```
