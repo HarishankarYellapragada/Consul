@@ -38,3 +38,11 @@ Create a gossip encryption key
 ```
 kubectl create secret generic consul-gossip-encryption-key --from-literal=key=$(consul keygen)
 ```
+To reference use in config:
+```
+global:
+  gossipEncryption:
+    secretName: consul-gossip-encryption-key
+    secretKey: key
+```
+# Step 5:
