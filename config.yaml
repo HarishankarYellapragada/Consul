@@ -8,6 +8,9 @@ global:
     secretKey: 'key'
   tls:
     enabled: true
+    # This configuration sets `verify_outgoing`, `verify_server_hostname`,
+    # and `verify_incoming` to `false` on servers and clients,
+    # which allows TLS-disabled nodes to join the cluster.
     enableAutoEncrypt: true
     verify: true
   acls:
