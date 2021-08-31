@@ -91,3 +91,13 @@ ui:
 #    type: "LoadBalancer"
   enabled: true
 ```
+# Step 7:
+
+For ACL token to use on UI. Use the following command from the cli
+```
+kubectl get secrets/consul-bootstrap-acl-token --template={{.data.token}} | base64 --decode
+```
+#REINSTALLING STEPS
+1) Delete PV and PVC from lens
+2) Delete all files in pv0/pv1/pv2 from all workers (use tree command)
+3) Create pv from pv.yaml 
