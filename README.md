@@ -54,6 +54,17 @@ global:
     secretKey: key
 ```
 # Step 5:
+Get the repo of consul 
+
+```
+helm repo add hashicorp https://helm.releases.hashicorp.com
+```
+```
+helm search repo hashicorp/consul
+```
+```
+helm install consul hashicorp/consul --set global.name=consul
+```
 To start consul 
 ```
 helm install consul hashicorp/consul -f config.yaml
@@ -74,3 +85,12 @@ with tls enabled
 kubectl port-forward service/consul-server 8501:8501
 ```
 https://localhost:8501
+
+Or use LoadBalancer step and check in the kubenetes services for dynamic port where UI will be loaded.
+```
+ui:
+# Add service Loadbalancer for consul ui to be on a random port. Check in kubernetes services
+#  service:
+#    type: "LoadBalancer"
+  enabled: true
+```
