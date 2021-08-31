@@ -101,3 +101,4 @@ kubectl get secrets/consul-bootstrap-acl-token --template={{.data.token}} | base
 1) Delete PV and PVC from lens
 2) Delete all files in pv0/pv1/pv2 from all workers (use tree command)
 3) Recreate pv from pv.yaml  ```kubectl apply -f pv.yaml```
+4) Delete ```consul-server-acl-init-cleanup``` job from lens
