@@ -34,7 +34,7 @@ Create a path for pv on all workers
 ```
 Assign permission to the directory
 ```
-chown 100:1000 -R /data
+chown 100:1000 -R data/
 ```
 ```
 kubectl apply -f pv.yaml
