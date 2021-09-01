@@ -97,5 +97,5 @@ For ACL token to use on UI. Use the following command from the cli
 ```
 kubectl get secrets/consul-bootstrap-acl-token --template={{.data.token}} | base64 --decode
 ```
-#REINSTALLING STEPS
+# Uninstallation STEPS
 Follow steps in https://www.consul.io/docs/k8s/operations/uninstall
