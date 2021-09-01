@@ -98,7 +98,4 @@ For ACL token to use on UI. Use the following command from the cli
 kubectl get secrets/consul-bootstrap-acl-token --template={{.data.token}} | base64 --decode
 ```
 #REINSTALLING STEPS
-1) Delete PV and PVC from lens
-2) Delete all files in pv0/pv1/pv2 from all workers (use tree command)
-3) Recreate pv from pv.yaml  ```kubectl apply -f pv.yaml```
-4) Delete ```consul-server-acl-init-cleanup``` job from lens
+Follow steps in https://www.consul.io/docs/k8s/operations/uninstall
